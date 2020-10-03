@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+ box-sizing: border-box; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.photos  {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-evenly;
+  color: black;
+  flex-wrap: wrap;
+  overflow: hidden;
+  
+}
+
+.photos img {
+  display: flex;
+  height: 250px;
+  width: 250px;
+  border-radius: 3px;
+  margin-top: 30px;
+  transition: transform .7s ease;
+  cursor: pointer;
+  opacity: 0.8;
+  overflow: hidden;
+ 
+}
+
+.photos img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  
+  
+  
+}
+
+.photos button{
+  display: flex;
+  margin-left: 60px;
+  border: none;
+  padding: 10px 20px 10px 20px;
+  background-color: #b90009;
+  color: white;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  overflow: hidden;
+  contain: content;
+
+}
+
+.photos button {
+  transition-duration: 0.4s;
+}
+
+.photos button:hover {
+  background-color: red; 
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App{
+ background-color: black;
+  height: 100vh;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+header{
+  display: flex;
+  
+  
 }
+
+.head img{
+  height: 55px;
+  width: 100x;
+  display: flex;
+  margin-top: 11px;
+  margin-left: 45px;
+  cursor: pointer;
+  
+}
+
+nav{
+  display:flex;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  text-decoration: none;
+  list-style: none; 
+  
+}
+
+a  {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  list-style: none;
+  font-size: 13px; 
+  margin: 12px;
+  letter-spacing: 1px;
+  transition-duration: 0.8s;
+  
+}
+
+a:hover{
+  color: grey;
+}
+
+@media(max-width: 1300px){
+  .photos img{
+    width: 200px;
+    height: 200px;
+  
+
+  }
+  .photos button{
+    font-size: 14px;
+    margin-left: 40px;
+    padding: 10px 10px;
+    overflow: hidden;
+
+  }
+
+  a{
+    margin-left: 8px;
+  }
+  
+  body{
+    background-color: black;
+    
+  }
+  .photos button{
+    padding: 8px;
+  }
+
+  .head img{
+    margin-left: 23px;
+  }
+  }
+
+
