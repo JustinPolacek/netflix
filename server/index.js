@@ -10,6 +10,8 @@ app.use(express.json());
 // movies controller
 app.get('/api/movies', controller.getMovies);
 app.delete('/api/movies/:index', controller.deleteMovie)
+app.post('/api/myList', controller.addMovie)
+app.get('/api/myList', controller.getMyList)
 
 
 

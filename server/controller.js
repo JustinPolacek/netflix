@@ -32,6 +32,8 @@ const movies = [
 ];
 
 
+const myList = [];
+
 
 function getMovies(req, res) {
     res.status(200).send(movies)
@@ -44,9 +46,22 @@ function deleteMovie(req, res){
 
 }
 
+function addMovie ( req, res) {
+let movie = req.body
+myList.push(movie)
+res.status(201).send(movie)
+}
+
+ const getMyList = (req, res) =>{
+res.status(200).send(myList)
+
+}
+
 
 module.exports = {
     getMovies,
-    deleteMovie
+    deleteMovie,
+    addMovie,
+    getMyList
 }
 

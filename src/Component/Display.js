@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Mylist from './Mylist';
 
 class Display extends Component {
     constructor(){
         super();
         this.state = {
-         myList: [] 
+         movies: [],
+         myList: []
         }
     }
  componentDidMount(){
@@ -14,14 +16,17 @@ class Display extends Component {
  }
  componentDidUpdate = () => {
     this.getMovies();
+    this.getMyList();
  }
-  
+
+
+
  getMovies = () =>{
     axios.get('/api/movies')
     .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         this.setState({
-        myList: res.data
+        movies: res.data
         })
     })
     .catch(error => {
@@ -29,9 +34,23 @@ class Display extends Component {
     })
  }
 
+getMyList = () => {
+    axios.get('/api/myList')
+    .then(res => {
+        // console.log(res.data)
+        this.setState({
+        myList: res.data
+        })
+    })
+    .catch(error => {
+        console.error(error);
+    })
+
+}
+
 updateState = (item, value) =>{
     this.setState({
-      item:value  
+      item:value
     })
 }
 onDeleteClick = (index) => {
@@ -44,25 +63,42 @@ axios.delete(`/api/movies/${index}`)
 });
 }
 
+addClick = (index) => {
+
+axios.post(`/api/myList`, this.state.movies[index])
+.then(res => {
+console.log(res.data)
+})
+.catch(error => {
+console.error(error);
+})
+
+}
+
 
     render(){
         return (
+                 <div>
                 <div className="photos">
-                {this.state.myList.map((movie, index) =>{
-                  return(  
+                {this.state.movies.map((movie, index) =>{
+                  return(
                     <div>
-    
+
                        <img src={movie.img} alt="movie"/>
                         <button onClick={() => {this.onDeleteClick(index)}}>Remove </button>
+                       <button onClick={() =>{this.addClick(index)}}> Add</button>
+r
+
                     </div>
-                    
+
                   )
                 })}
-                
+
+
                 </div>
-               
-            
-                
+                <Mylist myList={this.state.myList}/>
+                 </div>
+
         )
     }
 }
