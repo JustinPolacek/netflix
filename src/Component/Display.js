@@ -53,7 +53,7 @@ axios.delete(`/api/movies/${index}`)
                     <div>
     
                        <img src={movie.img} alt="movie"/>
-                        <button onClick={() => {this.onDeleteClick(index)}}>Watch Now</button>
+                        <button onClick={() => {this.onDeleteClick(index)}}>Remove </button>
                     </div>
                     
                   )
