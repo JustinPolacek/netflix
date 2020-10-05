@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
  box-sizing: border-box;
+ 
 }
 
 .mylist-header{
@@ -67,11 +68,18 @@
   color: white;
 }
 
+body{
+  background-color: black;
+}
+
 .App{
  background-color: black;
-  height: 100vh;
   position: relative;
+  height: 100vh;
+
+  
 }
+
 
 
 
