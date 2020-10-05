@@ -86,10 +86,11 @@ console.error(error);
 
                        <img src={movie.img} alt="movie"/>
                         <button onClick={() => {this.onDeleteClick(index)}}>Remove </button>
-                       <button onClick={() =>{this.addClick(index)}}> Add</button>
+                       <div classname="btn-2"><button onClick={() =>{this.addClick(index)}}> Add To List</button> </div>
 r
 
                     </div>
+                    
 
                   )
                 })}
